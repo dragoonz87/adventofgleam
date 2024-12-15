@@ -131,58 +131,6 @@ fn is_safe_internal(
   }
 }
 
-// fn is_safe_dampered(
-//   result: List(Int),
-//   increasing: Bool,
-//   decreasing: Bool,
-//   last: Int,
-//   // damped: Bool,
-// ) -> Bool {
-//   case result {
-//     [] -> True
-//     [level, ..rest] -> {
-//       // io.debug(Nil)
-//       // io.debug(result)
-//       // io.debug(level)
-//       // io.debug(rest)
-//       // io.debug(increasing)
-//       // io.debug(decreasing)
-//       // io.debug(last)
-//       // io.debug(damped)
-//       // io.debug(Nil)
-//       case increasing, decreasing {
-//         False, False ->
-//           case last {
-//             -1 -> is_safe_dampered(rest, False, False, level)
-//             l ->
-//               case int.absolute_value(level - l) {
-//                 diff if level > l && { diff >= 1 && diff <= 3 } ->
-//                   is_safe_dampered(rest, True, False, level)
-//                 diff if level < l && { diff >= 1 && diff <= 3 } ->
-//                   is_safe_dampered(rest, False, True, level)
-//                 _ ->
-//                   is_safe_damperless(rest, False, False, l)
-//                   || is_safe_damperless(rest, False, False, level)
-//               }
-//           }
-//         True, False ->
-//           case level - last {
-//             val if val >= 1 && val <= 3 ->
-//               is_safe_dampered(rest, True, False, level)
-//             _ -> is_safe_damperless(rest, True, False, last)
-//           }
-//         False, True ->
-//           case last - level {
-//             val if val >= 1 && val <= 3 ->
-//               is_safe_dampered(rest, False, True, level)
-//             _ -> is_safe_damperless(rest, False, True, last)
-//           }
-//         True, True -> False
-//       }
-//     }
-//   }
-// }
-
 fn damper(result: List(Int)) -> Bool {
   damper_internal(result, [])
 }
